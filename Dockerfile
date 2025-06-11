@@ -6,7 +6,7 @@ WORKDIR /app
 
 # 의존성 설치 및 빌드(CI)
 COPY package.json .
-RUN npm install
+RUN npm install --include=dev
 COPY . .
 RUN npm run build
 
