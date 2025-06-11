@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { DatePickerProps } from "react-datepicker";
 import "./path-to-your-css-file.css";
 import { Label } from "@/SCSS/Fixed";
 
@@ -28,9 +27,7 @@ const RadioBoxContainer = styled.div`
   }
 `;
 
-const DateInput = styled(
-  DatePicker as unknown as React.ComponentType<DatePickerProps>
-)`
+const DateInput = styled(DatePicker as typeof DatePicker)`
   width: 45vw;
   height: 50px;
   border: 1px solid black;
