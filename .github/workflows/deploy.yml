@@ -28,5 +28,5 @@ jobs:
           key: ${{ secrets.AWS_KEY }}
           script: |
             echo "AWS 연결"
-            docker pull ${{ secrets.DOCKER_USER_NAME }}/${{ secrets.DOCKER_IMAGE_NAME }}-fe
+            docker pull ${{ secrets.DOCKER_USER_NAME }}/${{ secrets.DOCKER_IMAGE_NAME }}
             docker-compose up -d
