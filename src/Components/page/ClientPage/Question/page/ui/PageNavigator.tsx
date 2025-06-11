@@ -72,7 +72,10 @@ export const PageNavigator = ({
               }`}
               aria-label="다음 페이지"
               onClick={() => {
-                if (TotalPage.current > CurrentPage + 1) {
+                if (
+                  TotalPage.current != null &&
+                  TotalPage.current > CurrentPage + 1
+                ) {
                   setCurrentPage(CurrentPage + 1);
                 } else {
                   toast("페이지 변경 불가 : 전체 페이지 수 초과", {
