@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  padding: 0; /* 또는 필요시 1rem 등 */
+}
+
+.custom-toast {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  font-size: 1rem;
+  margin: 1rem auto; /* 중앙 정렬용 */
+}
+
+.custom-toast-body {
+  font-size: 1.125rem;
+  width: 500px;
+}
+
+.my-toast {
+  width: 100%;
+  max-width: 40vw;
+  height: 40vh;
+  font-size: 10px;
+
+  @media screen and (max-width: 600px) {
+    max-width: 70vw;
+    height: 30vh;
+  }
+}
