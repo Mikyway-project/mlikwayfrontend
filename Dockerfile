@@ -6,6 +6,7 @@ WORKDIR /app
 
 # 의존성 설치 및 빌드(CI)
 COPY package.json package-lock.json ./
+RUN npm ci
 RUN npm install --include=dev
 COPY . .
 RUN npm run build
