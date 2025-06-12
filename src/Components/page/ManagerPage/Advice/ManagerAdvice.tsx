@@ -198,7 +198,8 @@ export const ManagerAdvice = () => {
       } else {
         toast.error("후기 내역 등록 실패", { position: "top-center" });
       }
-    } catch {
+    } catch (err) {
+      console.log(err);
       toast.error("서버 오류 발생", { position: "top-center" });
     } finally {
       setLoading(false);
