@@ -7,7 +7,7 @@ import {
   GateWayNumber,
   ManagerGateWayType,
 } from "@/types/GateWay/GateWayType";
-import { logout } from "@/config/request/ReduxList/userlogin";
+import { login, logout } from "@/config/request/ReduxList/userlogin";
 import { LoginCheck } from "./api/Logincheck";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/config/reduxstore";
@@ -214,6 +214,15 @@ export const MangerHeader: React.FC<MangerHeaderProps> = ({ children }) => {
                 popup: "my-toast", // 커스텀 클래스 지정
               },
             });
+            setActiveButton("Login");
+            dispatch(logout()); // 세션 상태를 false로 설정
+            dispatch(Sessionout()); // 세션 상태를 false로 설정
+            navigate(GateWayNumber.Manager + "/" + ManagerGateWayType.Main); // 로그인 페이지로 이동
+          }
+          if (activeButton == "Login" && res.resultType != -"unlogin") {
+            navigate(-1);
+          }
+          if (activeButton == "Login" && res.resultType == "unlogin") {
             setActiveButton("Login");
             dispatch(logout()); // 세션 상태를 false로 설정
             dispatch(Sessionout()); // 세션 상태를 false로 설정
