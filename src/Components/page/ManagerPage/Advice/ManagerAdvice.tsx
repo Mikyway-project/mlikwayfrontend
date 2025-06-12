@@ -183,6 +183,8 @@ export const ManagerAdvice = () => {
 
     try {
       const res = await POST_FORM(paths.Notice.basic.path, formData);
+
+      console.log(res);
       if (res.resultType === "success") {
         Swal.fire({
           icon: "success",
