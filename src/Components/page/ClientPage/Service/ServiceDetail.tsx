@@ -33,11 +33,11 @@ const ServiceDetail = () => {
           console.log("Notice Data:", res.data[0].noticeDetailEntities);
           setNoticeDetails(res.data[0].noticeDetailEntities);
         } else {
-          console.error("Failed to fetch service details:", res);
+          console.error("Failed to fetch service details Area:", res);
         }
       });
     } catch (error) {
-      console.error("Error fetching service details:", error);
+      console.error("Error fetching service details Area:", error);
     }
   };
 
@@ -164,5 +164,6 @@ const ServiceDetail = () => {
     </>
   );
 };
+// ㅇㅇㄹㅇㄴㄹㄴㅇㄴㄹㄹ
 
 export default ServiceDetail;
