@@ -219,9 +219,6 @@ export const MangerHeader: React.FC<MangerHeaderProps> = ({ children }) => {
             dispatch(Sessionout()); // 세션 상태를 false로 설정
             navigate(GateWayNumber.Manager + "/" + ManagerGateWayType.Main); // 로그인 페이지로 이동
           }
-          if (activeButton == "Login" && res.resultType != -"unlogin") {
-            navigate(-1);
-          }
           if (activeButton == "Login" && res.resultType == "unlogin") {
             setActiveButton("Login");
             dispatch(logout()); // 세션 상태를 false로 설정
