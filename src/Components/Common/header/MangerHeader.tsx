@@ -154,12 +154,12 @@ export const MangerHeader: React.FC<MangerHeaderProps> = ({ children }) => {
       setActiveButton(buttonName);
       await LoginCheck().then((res) => {
         console.log(res.resultType);
-        if (res.resultType == "unLogin") {
+        if (res.resultType == "unlogin") {
           Swal.fire({
             toast: true,
             position: "top",
             icon: "error",
-            title: "관리자 계정 로그인 후 이용해주세요." + res.message,
+            title: "로그인 후 이용해주세요.",
             showConfirmButton: false,
             timer: 3000,
             timerProgressBar: true,
@@ -196,37 +196,42 @@ export const MangerHeader: React.FC<MangerHeaderProps> = ({ children }) => {
   };
   useEffect(() => {
     const LoginCheck = async () => {
-      await POST({
+      POST({
         url: paths.Certification.check.path,
-      }).then((res) => {
-        if (res.resultType == "unlogin") {
+      })
+        .then((res) => {
+          console.log(paths.Certification.check.path);
           console.log("LoginCheck Response:", res);
-          Swal.fire({
-            position: "center",
-            icon: "error",
-            title: res.message,
-            showConfirmButton: true,
-            timer: 3000,
-            timerProgressBar: true,
-            customClass: {
-              popup: "my-toast", // 커스텀 클래스 지정
-            },
-          });
-          setActiveButton("Login");
-          dispatch(logout()); // 세션 상태를 false로 설정
-          dispatch(Sessionout()); // 세션 상태를 false로 설정
-          navigate(GateWayNumber.Manager + "/" + ManagerGateWayType.Main); // 로그인 페이지로 이동
-        } else {
-          console.log("LoginCheck Response:", res);
-          dispatch(
-            setSession({
-              isAuthenticated: res.resultType === "success",
-              userId: res.data ? res.data.userid : "",
-            })
-          );
-        }
-        // 세션 상태를 true로 설정
-      });
+          if (res.resultType == "unlogin" && activeButton !== "Login") {
+            Swal.fire({
+              position: "center",
+              icon: "error",
+              title: res.message,
+              showConfirmButton: true,
+              timer: 3000,
+              timerProgressBar: true,
+              customClass: {
+                popup: "my-toast", // 커스텀 클래스 지정
+              },
+            });
+            setActiveButton("Login");
+            dispatch(logout()); // 세션 상태를 false로 설정
+            dispatch(Sessionout()); // 세션 상태를 false로 설정
+            navigate(GateWayNumber.Manager + "/" + ManagerGateWayType.Main); // 로그인 페이지로 이동
+          } else {
+            console.log("LoginCheck Response:", res);
+            dispatch(
+              setSession({
+                isAuthenticated: res.resultType === "success",
+                userId: res.data ? res.data.userid : "",
+              })
+            );
+          }
+          // 세션 상태를 true로 설정
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     };
 
     LoginCheck();
@@ -365,7 +370,7 @@ export const MangerHeader: React.FC<MangerHeaderProps> = ({ children }) => {
             <li>
               {auth.isAuthenticated ? (
                 <ChangeButton
-                  isActive={activeButton === "LogOut"}
+                  isActive={activeButton === "Logout"}
                   onClick={() => Logout()}
                 >
                   Logout

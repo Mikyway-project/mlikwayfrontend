@@ -36,7 +36,8 @@ const fadeSlideIn = keyframes`
 `;
 
 const ImageCard = styled.div<ImageCardProps>`
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
   height: 180px;
   background-image: url(${(props) => props.image});
   background-size: cover;

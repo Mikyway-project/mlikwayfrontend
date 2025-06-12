@@ -69,11 +69,6 @@ const CommentQuestion = () => {
   useEffect(() => {
     handleSearch().then((res) => {
       if (res.resultType == "empty") {
-        Swal.fire({
-          icon: "info",
-          title: "게시판 없음",
-          text: "현재 관리해야 할 게시판이 없습니다.",
-        });
         setBoard([]);
       } else {
         if (res.pageDTO.list !== undefined) {

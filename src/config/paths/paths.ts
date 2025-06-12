@@ -85,8 +85,8 @@ export const paths = {
       getHref: () => "/api/auth/logout",
     },
     serach: {
-      path: "/auth/search",
-      getHref: () => "/auth/search",
+      path: "/api/auth/search",
+      getHref: () => "/api/auth/search",
     },
     check: {
       path: "/api/auth/check",

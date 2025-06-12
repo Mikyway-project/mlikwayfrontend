@@ -11,7 +11,6 @@ import IntroductionDetail from "./Component/IntroductionDetail";
 import EmptyReview from "./Component/EmptyReview";
 import ReviewCards from "./Component/ReviewCards";
 import { PageNavigator } from "../Question/page/ui/PageNavigator";
-import { toast } from "react-toastify";
 import { useSearchParams } from "react-router-dom";
 import { ReviewBanner } from "./Component/ReviewBanner";
 const Fontname2 = styled.div`
@@ -68,21 +67,7 @@ const ServiceProFile = () => {
         setNotice(res.pageDTO.list);
         TotalPage.current = res.pageDTO.pageCount;
       })
-      .catch((err) => {
-        console.error("Error fetching reviews:", err);
-        toast.error(
-          "리뷰를 불러오는 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요." +
-            err,
-          {
-            position: "top-center",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-          }
-        );
+      .catch(() => {
         setNotice([]);
       });
     setIntroduction(IntroductionService.filter((s) => s.Service === select));
