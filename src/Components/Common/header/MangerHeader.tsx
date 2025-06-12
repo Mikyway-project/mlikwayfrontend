@@ -7,7 +7,7 @@ import {
   GateWayNumber,
   ManagerGateWayType,
 } from "@/types/GateWay/GateWayType";
-import { login, logout } from "@/config/request/ReduxList/userlogin";
+import { logout } from "@/config/request/ReduxList/userlogin";
 import { LoginCheck } from "./api/Logincheck";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/config/reduxstore";
