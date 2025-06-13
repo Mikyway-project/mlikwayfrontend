@@ -18,7 +18,7 @@ export const POST_FORM = async (
         "Content-Type": "multipart/form-data",
         ...config?.headers,
       },
-      timeout: 60000, // 1분 또는 그 이상으로 설정
+      timeout: 260000, // 1분 또는 그 이상으로 설정
     });
     return response.data;
   } catch (error) {

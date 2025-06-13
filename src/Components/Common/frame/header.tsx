@@ -11,10 +11,11 @@ export const Head = ({ title = "", description = "" }: HeadProps = {}) => {
   return (
     <Helmet
       helmetData={helmetData}
-      title={title ? `${title} | Bulletproof React` : undefined}
-      defaultTitle="Bulletproof React"
+      title={title ? `${title} | 은하수홈케어` : undefined}
+      defaultTitle="경상도 청소업체 은하수홈케어"
     >
       <meta name="description" content={description} />
+      <link rel="icon" type="image/png" href="/favicon.png" />
     </Helmet>
   );
 };

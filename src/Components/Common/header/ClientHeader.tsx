@@ -55,7 +55,7 @@ type ClientHeaderProps = {
 
 export const ClientHeader = ({ children }: ClientHeaderProps) => {
   const [isListVisible, setListVisible] = useState(false);
-  const [activeButton, setActiveButton] = useState<string>("");
+  const [activeButton, setActiveButton] = useState<string>("Main");
   const nativeGate = useNavigate();
   const listRef = useRef<HTMLDivElement>(null);
 
