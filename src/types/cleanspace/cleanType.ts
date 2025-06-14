@@ -7,9 +7,9 @@ import movein from "@/Components/Common/assets/clean_type/이사청소.png";
 import construction from "@/Components/Common/assets/clean_type/준공청소.png";
 import depart from "@/Components/Common/assets/clean_type/부분청소.png";
 export const cleanType = [
-  "주거청소",
-  "입주청소",
   "이사청소",
+  "입주청소",
+  "주거청소",
   "계단청소",
   "새집증후군",
   "건물청소",

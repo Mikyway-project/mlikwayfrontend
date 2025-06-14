@@ -104,12 +104,17 @@ export const AddressBox = ({ name, append, setValue }: SelectBoxProps) => {
   };
   const width = useWindowWidth();
   const isMobileText =
-    width <= 600 ? "지역명 입력해주세요" : "지역명을 입력해주세요(시, 구, 동)";
+    width <= 600
+      ? "지역명 입력해주세요"
+      : "지역명을 입력해주세요(시, 구, 동) 단, 부산은 구 동만";
   return (
     <SelectContainer>
       <Label>{name}</Label>
       <FieldGroup>
         <Select onChange={handleChange} value={address.input ?? ""}>
+          <option style={{ padding: "10px", textAlign: "center" }}>
+            ====지역 값 선택====
+          </option>
           {append.map((item) => (
             <option key={item} value={item} style={{ padding: "10px" }}>
               {item}

@@ -83,10 +83,10 @@ const DeskContainer = styled.div`
 
 export const ManagerAdvice = () => {
   const [count, setCount] = useState(1);
-  const [type, setType] = useState<string>("주거청소");
+  const [type, setType] = useState<string>();
   const [greeting, setgreeting] = useState("");
   const [title, setTitle] = useState<string>("");
-  const [cleanspot, setcleanspot] = useState<string[]>(["부엌"]);
+  const [cleanspot, setcleanspot] = useState<string[]>([]);
   const [titleimg, setTitleimg] = useState<File>(new File([], ""));
   const [beforefile, setbeforefile] = useState<File[][]>([]);
   const [afferfile, setAfferfile] = useState<File[][]>([]);
@@ -114,7 +114,7 @@ export const ManagerAdvice = () => {
       setNoticeData({
         title: title,
         titleimg: titleimg.name,
-        type: type,
+        type: type ?? "", // Provide a default string if type is undefined
         greeting: greeting,
       })
     );
@@ -231,6 +231,7 @@ export const ManagerAdvice = () => {
                 name={"도입 인사"}
                 Value={greeting}
                 setValue2={setgreeting}
+                place="고객에게 할 도입 인삿말을 참신하게 써주세요~~!"
               />
             </div>
             {[...Array(count)].map((_, i) => (
@@ -247,7 +248,7 @@ export const ManagerAdvice = () => {
                     margin: "0px",
                   }}
                 >
-                  게시판 구역 {i + 1}
+                  청소 구역 {i + 1}
                 </Fontname>
                 <DeskContainer>
                   <SelectBox

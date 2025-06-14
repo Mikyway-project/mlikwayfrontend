@@ -71,6 +71,9 @@ export const SelectBox = ({
     <SelectContainer>
       <Label>{name}</Label>
       <Select onChange={handleChange} value={value ?? ""}>
+        <option style={{ padding: "10px", textAlign: "center" }} selected>
+          ========={name} 값 선택=========
+        </option>
         {append.map((item) => (
           <option key={item} value={item}>
             {item}
