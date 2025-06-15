@@ -16,6 +16,10 @@ export const Head = ({ title = "", description = "" }: HeadProps = {}) => {
       title={title ? `${title} | 은하수홈케어` : undefined}
       defaultTitle="경상도 청소업체 은하수홈케어"
     >
+      <meta
+        name="naver-site-verification"
+        content="b5edfb4fc5914cb01b8886217c52e05f0d1d51fe"
+      />
       <meta name="description" content={description} />
       <link rel="icon" type="image/svg+xml" href={image} />
       <meta property="og:type" content="website" />
