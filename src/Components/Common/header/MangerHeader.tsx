@@ -275,7 +275,10 @@ export const MangerHeader: React.FC<MangerHeaderProps> = ({ children }) => {
 
   return (
     <div>
-      <Head title={activeButton} description="은하수 홈케어" />
+      <Head
+        title={activeButton}
+        description="경상도 청소 전문 업체, 은하수 홈케어의 홈페이지입니다."
+      />
       <HeaderBox>
         <div style={{ display: "flex", alignItems: "center" }}>
           <img
