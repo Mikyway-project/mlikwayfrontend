@@ -70,6 +70,16 @@ export const Fontname2 = styled(Fontname)`
   }
 `;
 
+export const Fontname3 = styled(Fontname)`
+  font-size: 20px;
+  margin: 0;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
+`;
+
 const Mapper = styled.div`
   width: 100%;
   height: auto;

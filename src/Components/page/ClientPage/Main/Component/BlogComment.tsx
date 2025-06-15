@@ -1,7 +1,7 @@
 import { useWindowWidth } from "@/types/hooks/useWindowWidth";
 import { FaBlog, FaClipboardList } from "react-icons/fa";
 import styled from "styled-components";
-
+import { EventsProfile } from "@/Components/Common/events/EventsProfile"; // Adjust the path if needed
 const LogSection = styled.div`
   text-align: center;
   margin-top: 15px;
@@ -71,6 +71,7 @@ export const BlogComment = () => {
           </LogDescription>
         </div>
       </LogItem>
+      <EventsProfile eventname="이번 한달 동안, 홈페이지에 방문한 고객에 한하여, 피톤치드 무료로 해드리고 있습니다." />
     </LogSection>
   );
 };
