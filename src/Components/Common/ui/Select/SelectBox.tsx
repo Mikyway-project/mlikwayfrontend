@@ -19,9 +19,9 @@ const Select = styled.select`
     outline: 3px solid #f8e4ff;
   }
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 600px) {
     width: 100%;
-    max-width: 260px; /* 모바일에서 최대 너비 설정 */
+    max-width: 350px; /* 모바일에서 최대 너비 설정 */
     height: 40px; /* 모바일에서 높이 설정 */
   }
 `;
@@ -71,7 +71,7 @@ export const SelectBox = ({
     <SelectContainer>
       <Label>{name}</Label>
       <Select onChange={handleChange} value={value ?? ""}>
-        <option style={{ padding: "10px", textAlign: "center" }} selected>
+        <option style={{ padding: "10px", textAlign: "center" }} value={""}>
           ========={name} 값 선택=========
         </option>
         {append.map((item) => (

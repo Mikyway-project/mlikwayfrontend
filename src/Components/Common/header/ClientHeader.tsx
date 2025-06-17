@@ -73,7 +73,7 @@ export const ClientHeader = ({ children }: ClientHeaderProps) => {
     const isConfirmed = window.confirm("관리자 페이지로 이동하시겠습니까?");
     setActiveButton("AdminPage");
     if (isConfirmed) {
-      nativeGate(GateWayNumber.Manager + "/" + ManagerGateWayType.Main);
+      nativeGate(GateWayNumber.Manager + "/" + ManagerGateWayType.AdviceSelect);
     }
     setListVisible(false);
   };

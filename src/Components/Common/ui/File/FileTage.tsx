@@ -1,6 +1,6 @@
 import { Label } from "@/SCSS/Fixed";
 import { useWindowWidth } from "@/types/hooks/useWindowWidth";
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import styled from "styled-components";
 
 interface SelectBoxProps {
@@ -35,9 +35,13 @@ const CustomLabel = styled(Label)`
   }
 `;
 
-const CustomFileLabel = styled.label`
+interface CustomFileLabelProps {
+  $hasFile: boolean;
+}
+
+const CustomFileLabel = styled.label<CustomFileLabelProps>`
   cursor: pointer;
-  background-color: #888;
+  background-color: ${(props) => (props.$hasFile ? "green" : "#888")};
   width: 70%;
   height: 50px;
   color: white;
@@ -50,7 +54,7 @@ const CustomFileLabel = styled.label`
   font-weight: bold;
 
   &:hover {
-    background-color: brown;
+    background-color: ${(props) => (props.$hasFile ? "darkgreen" : "brown")};
   }
 
   @media screen and (max-width: 800px) {
@@ -91,6 +95,7 @@ export const FileTage = ({
   const buttonText = isMobile
     ? "클릭 시 갤러리가 열립니다"
     : name + "에 해당하는 파일을 선택해주세요";
+  const [hasFile, setHasFile] = useState(false);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = Array.from(e.target.files || []); // 선택한 파일들
@@ -102,16 +107,31 @@ export const FileTage = ({
         const updatedValue = [...Value];
         updatedValue[index] = FileArray;
         setAfferValue(updatedValue); // 부모 컴포넌트에 파일 상태 전달
+        if (updatedValue.length > 0) {
+          setHasFile(true);
+        } else {
+          setHasFile(false);
+        }
       }
     } else if (setBeforeValue && Value) {
       if (index !== undefined) {
         const updatedValue = [...Value];
         updatedValue[index] = FileArray;
         setBeforeValue(updatedValue); // 부모 컴포넌트에 파일 상태 전달
+        if (updatedValue.length > 0) {
+          setHasFile(true);
+        } else {
+          setHasFile(false);
+        }
       }
     } else {
       if (setValue2) {
         setValue2(files[0]); // 단일 파일을 설정
+        if (files[0] != undefined) {
+          setHasFile(true);
+        } else {
+          setHasFile(false);
+        }
       }
     }
     // setValue2(FileArray); // 별도의 상태를 관리하는 함수 호출
@@ -123,7 +143,9 @@ export const FileTage = ({
   return (
     <FileContainer>
       <CustomLabel>{name}</CustomLabel>
-      <CustomFileLabel htmlFor={inputId}>{buttonText}</CustomFileLabel>
+      <CustomFileLabel htmlFor={inputId} $hasFile={hasFile}>
+        {buttonText}
+      </CustomFileLabel>
       <FileTageBox
         type="file"
         id={inputId}
