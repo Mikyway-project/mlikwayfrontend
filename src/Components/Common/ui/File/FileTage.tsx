@@ -1,11 +1,12 @@
 import { Label } from "@/SCSS/Fixed";
 import { useWindowWidth } from "@/types/hooks/useWindowWidth";
-import { Dispatch, SetStateAction, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import styled from "styled-components";
 
 interface SelectBoxProps {
   name: string;
   Value?: File[][]; // 2차원 배열
+  Value2?: File;
   setBeforeValue?: Dispatch<SetStateAction<File[][]>>;
   setAfferValue?: Dispatch<SetStateAction<File[][]>>;
   setValue2?: Dispatch<SetStateAction<File>>; // 별도의 상태를 관리하는 함수
@@ -78,6 +79,7 @@ export const FileTage = ({
   Value,
   setBeforeValue,
   index,
+  Value2,
   setValue2,
   setAfferValue,
   type,
@@ -96,6 +98,12 @@ export const FileTage = ({
     ? "클릭 시 갤러리가 열립니다"
     : name + "에 해당하는 파일을 선택해주세요";
   const [hasFile, setHasFile] = useState(false);
+
+  useEffect(() => {
+    if (Value != undefined || Value2 != undefined) {
+      setHasFile(true);
+    }
+  }, []);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = Array.from(e.target.files || []); // 선택한 파일들

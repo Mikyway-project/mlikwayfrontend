@@ -226,7 +226,11 @@ export const ManagerAdvice = () => {
                 value={type}
                 setValue={setType}
               />
-              <FileTage name={"대표 이미지"} setValue2={setTitleimg} />
+              <FileTage
+                name={"대표 이미지"}
+                setValue2={setTitleimg}
+                Value2={titleimg}
+              />
               <TextAreaBox
                 name={"도입 인사"}
                 Value={greeting}
