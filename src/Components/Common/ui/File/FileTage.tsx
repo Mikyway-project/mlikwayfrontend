@@ -99,12 +99,6 @@ export const FileTage = ({
     : name + "에 해당하는 파일을 선택해주세요";
   const [hasFile, setHasFile] = useState(false);
 
-  useEffect(() => {
-    if (Value != undefined || Value2 != undefined) {
-      setHasFile(true);
-    }
-  }, []);
-
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = Array.from(e.target.files || []); // 선택한 파일들
     const FileArray: File[] = []; // 선택한 파일들을 1차원 배열로 유지
