@@ -28,7 +28,7 @@ jobs:
         run: docker push ${{ secrets.DOCKER_USER_NAME }}/${{ secrets.DOCKER_IMAGE_NAME }}
 
       - name: AWS EC2에 ssh 접속 후 배포할게요
-        uses: appleboy/ssh-action@master
+        uses: appleboy/ssh-action@v1
         with:
           host: ${{ secrets.AWS_IP }}
           port: 22
