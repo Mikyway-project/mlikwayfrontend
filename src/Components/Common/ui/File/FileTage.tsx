@@ -1,6 +1,6 @@
 import { Label } from "@/SCSS/Fixed";
 import { useWindowWidth } from "@/types/hooks/useWindowWidth";
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import styled from "styled-components";
 
 interface SelectBoxProps {
@@ -79,7 +79,6 @@ export const FileTage = ({
   Value,
   setBeforeValue,
   index,
-  Value2,
   setValue2,
   setAfferValue,
   type,

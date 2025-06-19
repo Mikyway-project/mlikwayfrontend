@@ -251,11 +251,7 @@ const ManagerAdviceedit = () => {
             Value={title}
             setValue2={setTitle}
           ></InputTextBox>
-          <FileTage
-            name={"대표 이미지"}
-            setValue2={setTitleimg}
-            Value2={titleimg}
-          />
+          <FileTage name={"대표 이미지"} setValue2={setTitleimg} />
           <SelectBox
             name={"청소 유형"}
             append={cleanType}
