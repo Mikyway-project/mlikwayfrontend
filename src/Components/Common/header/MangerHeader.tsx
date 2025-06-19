@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "@/SCSS/header.scss";
 import broom from "@/Components/Common/assets/broom.png";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import {
   ClientGateWayType,
   GateWayNumber,
@@ -148,10 +148,12 @@ export const MangerHeader: React.FC<MangerHeaderProps> = ({ children }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const auth = useSelector((state: RootState) => state.auth.value);
+  const location = useLocation();
 
   const FuncClick = async (name: string, buttonName: string) => {
     try {
       setActiveButton(buttonName);
+
       await LoginCheck().then((res) => {
         console.log(res.resultType);
         if (res.resultType == "unlogin") {
@@ -240,8 +242,10 @@ export const MangerHeader: React.FC<MangerHeaderProps> = ({ children }) => {
         });
     };
 
-    LoginCheck();
-  }, [activeButton]);
+    if (location.pathname !== "/Manager/Login") {
+      LoginCheck();
+    }
+  }, [location.pathname]);
 
   const Logout = async () => {
     const isConfirmed = window.confirm("로그아웃 하시겠습니까?");
