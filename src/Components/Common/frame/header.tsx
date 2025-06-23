@@ -25,7 +25,6 @@ export const Head = ({ title = "", description = "" }: HeadProps = {}) => {
         content="경상남도 진주시를 연고로 하여 설립된지 올해로 10년, 업력은 짧아도 실력은 확실합니다."
       />
       <meta property="og:image" content={image2} />
-      <meta property="og:image" content="https://mlikway.co.kr" />
       <meta name="twitter:card" content="summary" />
       <meta property="twitter:title" content="경상남도 청소업체 은하수홈케어" />
       <meta
@@ -33,7 +32,6 @@ export const Head = ({ title = "", description = "" }: HeadProps = {}) => {
         content="경상남도 진주시를 연고로 하여 설립된지 올해로 10년, 업력은 짧아도 실력은 확실합니다."
       />
       <meta property="twitter:image" content={image2} />
-      <meta property="twitter:image" content="https://mlikway.co.kr" />
     </Helmet>
   );
 };
