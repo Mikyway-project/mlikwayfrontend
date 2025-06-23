@@ -38,6 +38,8 @@ import ManagerInquires from "@/Components/page/ManagerPage/Inquires/ManagerInqui
 import { ToastContainer } from "react-toastify";
 import ManagerInquiresSelect from "@/Components/page/ManagerPage/Inquires/ManagerInquiresSelect";
 import ServiceDetail from "@/Components/page/ClientPage/Service/ServiceDetail";
+import { useEffect } from "react";
+import ReactGA from "react-ga4";
 
 const router = createBrowserRouter([
   {
@@ -173,8 +175,12 @@ const GlobalStyle = createGlobalStyle`
     -ms-user-select: text !important;
   }
 `;
-
 const App = () => {
+  useEffect(() => {
+    ReactGA.initialize("G-H80BE2F7QS"); // Replace with your actual GA4 Measurement ID
+    ReactGA.send("pageview");
+  }, []);
+
   return (
     <ThemeProvider theme={theme}>
       <Provider store={store}>

@@ -6,6 +6,7 @@ import { ClientPhoneNumber } from "./ClientPhoneNumber";
 import styled from "styled-components";
 import { RoundWidgets } from "@/Components/page/ClientPage/Main/Component/RoundWidgets";
 import { useWindowWidth } from "@/types/hooks/useWindowWidth";
+import { RouteChangeTracker } from "@/types/hooks/RouteChangeTracker";
 
 const MobileBox = styled.div`
   @media (max-width: 1044px) {
@@ -23,6 +24,8 @@ export const ClientComonPage = () => {
           <ComonProfile />
         </MobileBox>
         <Outlet />
+        <RouteChangeTracker />
+
         <ClientPhoneNumber />
         {isMobile ? null : <RoundWidgets />}
         <Footer />
