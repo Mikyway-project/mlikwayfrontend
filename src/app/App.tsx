@@ -40,6 +40,7 @@ import ManagerInquiresSelect from "@/Components/page/ManagerPage/Inquires/Manage
 import ServiceDetail from "@/Components/page/ClientPage/Service/ServiceDetail";
 import { useEffect } from "react";
 import ReactGA from "react-ga4";
+import { HelmetProvider } from "react-helmet-async";
 
 const router = createBrowserRouter([
   {
@@ -184,21 +185,23 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <Provider store={store}>
-        <GlobalSwalStyle /> {/* 여기 넣기 */}
-        <GlobalStyle />
-        <ToastContainer
-          position="top-right"
-          autoClose={5000}
-          hideProgressBar={false}
-          closeOnClick
-          pauseOnHover
-          draggable
-          toastClassName="custom-toast"
-          className="custom-toast-body"
-        />
-        <div className="App">
-          <RouterProvider router={router} />
-        </div>
+        <HelmetProvider>
+          <GlobalSwalStyle /> {/* 여기 넣기 */}
+          <GlobalStyle />
+          <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            closeOnClick
+            pauseOnHover
+            draggable
+            toastClassName="custom-toast"
+            className="custom-toast-body"
+          />
+          <div className="App">
+            <RouterProvider router={router} />
+          </div>
+        </HelmetProvider>
       </Provider>
     </ThemeProvider>
   );
