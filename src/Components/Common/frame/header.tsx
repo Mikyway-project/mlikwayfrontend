@@ -17,7 +17,7 @@ export const Head = ({ title = "", description = "" }: HeadProps = {}) => {
       defaultTitle="경상도 청소업체 은하수홈케어"
     >
       <meta name="description" content={description} />
-      <link rel="icon" type="image/svg+xml" href={image} />
+      <link rel="icon" type="image/png" href={image} />
       <meta property="og:type" content="website" />
       <meta property="og:title" content="경상남도 청소업체 은하수홈케어" />
       <meta
