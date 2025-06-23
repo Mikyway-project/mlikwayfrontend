@@ -178,7 +178,7 @@ export const InquireText = () => {
           }
         />
         <InputText
-          placeholder="전화번호가 뭐에요?"
+          placeholder="전화번호 입력"
           value={Selector.PhoneNumber}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
             dispatch(
@@ -187,7 +187,7 @@ export const InquireText = () => {
           }
         />
         <TextAreas
-          placeholder="물어보고 싶은 건?"
+          placeholder="간편 문의 사항 입력"
           value={Selector.Inqurie}
           onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
             dispatch(setIqurieData({ ...Selector, Inqurie: e.target.value }))
