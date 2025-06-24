@@ -1,9 +1,9 @@
-import firstImage from "@/Components/Common/assets/cleaning_blog_assets/first_image.jpg";
-import twoImage from "@/Components/Common/assets/cleaning_blog_assets/two_image.jpg";
-import four_image from "@/Components/Common/assets/cleaning_blog_assets/four_image.jpg";
-import five_image from "@/Components/Common/assets/cleaning_blog_assets/five_image.jpg";
-import six_image from "@/Components/Common/assets/cleaning_blog_assets/six_image.jpg";
-import there_image from "@/Components/Common/assets/cleaning_blog_assets/there_image.jpg";
+import firstImage from "@/Components/Common/assets/cleaning_blog_assets/first_image.webp";
+import twoImage from "@/Components/Common/assets/cleaning_blog_assets/two_image.webp";
+import four_image from "@/Components/Common/assets/cleaning_blog_assets/four_image.webp";
+import five_image from "@/Components/Common/assets/cleaning_blog_assets/five_image.webp";
+import six_image from "@/Components/Common/assets/cleaning_blog_assets/six_image.webp";
+import there_image from "@/Components/Common/assets/cleaning_blog_assets/there_image.webp";
 
 export const ImageGridContainer = [
   {
