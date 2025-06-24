@@ -266,8 +266,8 @@ export const MainPage = () => {
           >
             <img
               src={data.icon}
-              width={200}
-              height={200}
+              width={100}
+              height={100}
               alt=""
               loading="lazy"
             />
