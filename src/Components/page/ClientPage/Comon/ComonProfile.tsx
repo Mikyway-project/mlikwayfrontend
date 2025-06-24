@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { theme } from "@/SCSS/typecss";
 import save2 from "@/Components/Common/assets/save2.gif";
-import save2Webp from "@/Components/Common/assets/save2.webm";
+import save2Webm from "@/Components/Common/assets/save2.webm";
 import { Link } from "react-router-dom";
 
 const ProfileWrapper = styled.div`
@@ -74,13 +74,24 @@ const AboutLink = styled(Link)`
   }
 `;
 
+const ProfileVideo = styled.video`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+`;
+
 export const ComonProfile = () => {
   return (
     <ProfileWrapper>
-      <picture>
-        {/* <source srcSet={save2Webp} type="image/webp" /> */}
-        <ProfileImage src={save2} alt="은하수홈케어 애니메이션 이미지" />
-      </picture>
+      <ProfileVideo autoPlay loop muted playsInline>
+        <source src={save2Webm} type="video/webm" />
+        <source src={save2} type="image/gif" />
+        브라우저가 video를 지원하지 않습니다.
+      </ProfileVideo>
       <TextContainer>
         <Line1>고객 모두를 하나의 가족 같은 마음으로!!!</Line1>
         <Line2>
