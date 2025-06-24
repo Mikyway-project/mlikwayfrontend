@@ -256,7 +256,7 @@ export const MainPage = () => {
           <span>하루에 한집씩!</span>
           <span>차근차근!! 꼼꼼히!!</span>
         </h2>
-        <div>어떤 업무를 하는 지 궁금하지 않으신가요?</div>
+        <div>어떤 서비스를 제공하는 지 궁금하지 않으신가요?</div>
       </MainMapper>
       <ButtonMapper>
         {cleaning.map((data, index) => (
