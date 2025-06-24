@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { theme } from "@/SCSS/typecss";
-import save2Webp from "@/Components/Common/assets/save2.webp";
+import save2 from "@/Components/Common/assets/save2.gif";
+import save2Webp from "@/Components/Common/assets/save2.webm";
 import { Link } from "react-router-dom";
 
 const ProfileWrapper = styled.div`
@@ -8,6 +9,12 @@ const ProfileWrapper = styled.div`
   height: 300px;
   position: relative;
   overflow: hidden;
+`;
+
+const ProfileImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 `;
 
 const TextContainer = styled.div`
@@ -71,8 +78,8 @@ export const ComonProfile = () => {
   return (
     <ProfileWrapper>
       <picture>
-        <source srcSet={save2Webp} type="image/webp" />
-        {/* <ProfileImage src={save2} alt="은하수홈케어 애니메이션 이미지" /> */}
+        {/* <source srcSet={save2Webp} type="image/webp" /> */}
+        <ProfileImage src={save2} alt="은하수홈케어 애니메이션 이미지" />
       </picture>
       <TextContainer>
         <Line1>고객 모두를 하나의 가족 같은 마음으로!!!</Line1>
