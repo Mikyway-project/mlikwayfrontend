@@ -13,7 +13,6 @@ export default defineConfig({
     react(),
     svgr(),
     viteImagemin({
-      // ✅ 이미지 최적화 설정
       gifsicle: {
         optimizationLevel: 7,
         interlaced: false,
@@ -21,9 +20,7 @@ export default defineConfig({
       optipng: {
         optimizationLevel: 7,
       },
-      mozjpeg: {
-        quality: 70,
-      },
+      mozjpeg: false, // <-- 여기 false로 변경
       pngquant: {
         quality: [0.65, 0.8],
         speed: 4,
@@ -33,14 +30,8 @@ export default defineConfig({
       },
       svgo: {
         plugins: [
-          {
-            name: "removeViewBox",
-            active: false,
-          },
-          {
-            name: "removeEmptyAttrs",
-            active: false,
-          },
+          { name: "removeViewBox", active: false },
+          { name: "removeEmptyAttrs", active: false },
         ],
       },
     }),
