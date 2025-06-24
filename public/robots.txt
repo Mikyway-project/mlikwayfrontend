@@ -1,12 +1,6 @@
 User-agent: *
-Disallow: /
-
-User-agent: Yeti
-Disallow: /admin/
-Disallow: /Manager/
+Disallow :
+ /Manager/
 Allow: /
-
-User-agent: Googlebot
-Disallow: /admin/
-Disallow: /Manager/
-Allow: /
+Sitemap: 
+https://mlikway.co.kr/sitemap.xml
