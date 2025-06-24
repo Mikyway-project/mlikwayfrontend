@@ -95,7 +95,7 @@ export const HeaderButton1 = styled.div`
   }
 `;
 
-export const ChangeButton = styled.button.withConfig({
+export const ChangeButton = styled.a.withConfig({
   shouldForwardProp: (prop) => prop !== "isActive",
 })<{ isActive: boolean }>`
   width: 100px;
