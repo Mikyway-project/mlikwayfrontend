@@ -4,57 +4,54 @@ import react from "@vitejs/plugin-react-swc";
 import svgr from "vite-plugin-svgr";
 import viteImagemin from "vite-plugin-imagemin";
 import compression from "vite-plugin-compression";
+import purgecss from "vite-plugin-purgecss";
 
-export default defineConfig({
-  server: {
-    port: 9000,
-    host: "localhost",
-  },
-  plugins: [
-    react(),
-    svgr(),
-    // ✅ 이미지 최적화 (mozjpeg 제외)
-    viteImagemin({
-      gifsicle: {
-        optimizationLevel: 7,
-        interlaced: false,
-      },
-      optipng: {
-        optimizationLevel: 7,
-      },
-      mozjpeg: false, // 🔧 문제되는 플러그인은 끔
-      pngquant: {
-        quality: [0.65, 0.8],
-        speed: 4,
-      },
-      webp: {
-        quality: 75,
-      },
-      svgo: {
-        plugins: [
-          { name: "removeViewBox", active: false },
-          { name: "removeEmptyAttrs", active: false },
-        ],
-      },
-    }),
-    // ✅ Gzip 압축
-    compression({
-      algorithm: "gzip",
-      ext: ".gz",
-      threshold: 1024,
-      deleteOriginFile: false,
-    }),
-    // ✅ Brotli 압축
-    compression({
-      algorithm: "brotliCompress",
-      ext: ".br",
-      threshold: 1024,
-      deleteOriginFile: false,
-    }),
-  ],
-  resolve: {
-    alias: {
-      "@": fileURLToPath(new URL("./src", import.meta.url)),
+export default defineConfig(({ mode }) => {
+  const isProd = mode === "production";
+
+  return {
+    server: {
+      port: 9000,
+      host: "localhost",
     },
-  },
+    plugins: [
+      react(),
+      svgr(),
+      viteImagemin({
+        gifsicle: { optimizationLevel: 7, interlaced: false },
+        optipng: { optimizationLevel: 7 },
+        mozjpeg: false,
+        pngquant: { quality: [0.65, 0.8], speed: 4 },
+        webp: { quality: 75 },
+        svgo: {
+          plugins: [
+            { name: "removeViewBox", active: false },
+            { name: "removeEmptyAttrs", active: false },
+          ],
+        },
+      }),
+      compression({ algorithm: "gzip", ext: ".gz", threshold: 1024 }),
+      compression({ algorithm: "brotliCompress", ext: ".br", threshold: 1024 }),
+      ...(isProd
+        ? [
+            purgecss({
+              content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx,html}"],
+              safelist: [
+                /^sc-/,
+                /^bg-/,
+                /^text-/,
+                /^hover:/,
+                "hidden",
+                "block",
+              ],
+            }),
+          ]
+        : []),
+    ],
+    resolve: {
+      alias: {
+        "@": fileURLToPath(new URL("./src", import.meta.url)),
+      },
+    },
+  };
 });
