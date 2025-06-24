@@ -1,11 +1,11 @@
-import apartments from "@/Components/Common/assets/clean_type/건물청소.png";
-import step from "@/Components/Common/assets/clean_type/계단청소.png";
-import tenants from "@/Components/Common/assets/clean_type/입주청소.png";
-import advice from "@/Components/Common/assets/clean_type/주거청소.png";
-import newhome from "@/Components/Common/assets/clean_type/새집증후군.png";
-import movein from "@/Components/Common/assets/clean_type/이사청소.png";
-import construction from "@/Components/Common/assets/clean_type/준공청소.png";
-import depart from "@/Components/Common/assets/clean_type/부분청소.png";
+import apartments from "@/Components/Common/assets/clean_type/건물청소.webp";
+import step from "@/Components/Common/assets/clean_type/계단청소.webp";
+import tenants from "@/Components/Common/assets/clean_type/입주청소.webp";
+import advice from "@/Components/Common/assets/clean_type/주거청소.webp";
+import newhome from "@/Components/Common/assets/clean_type/새집증후군.webp";
+import movein from "@/Components/Common/assets/clean_type/이사청소.webp";
+import construction from "@/Components/Common/assets/clean_type/준공청소.webp";
+import depart from "@/Components/Common/assets/clean_type/부분청소.webp";
 export const cleanType = [
   "이사청소",
   "입주청소",
