@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import blog from "@/Components/Common/assets/blog.jpg";
-import band from "@/Components/Common/assets/band.png";
-import kakaoTalk from "@/Components/Common/assets/kakaoTalk.png";
-import instar from "@/Components/Common/assets/instar.webp";
+import blog from "@/Components/Common/assets/icon/blog.svg";
+import band from "@/Components/Common/assets/icon/band.svg";
+import kakaoTalk from "@/Components/Common/assets/icon/kakaoTalk.svg";
+import instar from "@/Components/Common/assets/icon/instar.svg";
 import { Link } from "react-router-dom";
 
 const WidgetContainer = styled.div`

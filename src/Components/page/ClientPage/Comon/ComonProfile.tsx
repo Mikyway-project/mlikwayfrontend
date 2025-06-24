@@ -11,12 +11,6 @@ const ProfileWrapper = styled.div`
   overflow: hidden;
 `;
 
-const ProfileImage = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-`;
-
 const TextContainer = styled.div`
   position: absolute;
   top: 50%;
