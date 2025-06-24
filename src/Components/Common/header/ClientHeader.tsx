@@ -3,7 +3,7 @@ import styled, { createGlobalStyle } from "styled-components";
 import "@/SCSS/header.scss";
 import { useNavigate } from "react-router-dom";
 import { GateWayNumber, ManagerGateWayType } from "@/types/GateWay/GateWayType";
-import broom from "@/Components/Common/assets/broom.png";
+import broom from "@/Components/Common/assets/broom.webp";
 import { Head } from "../frame/header";
 import { ClientPath } from "./headerPaths";
 import { PiPhoneOutgoingFill } from "react-icons/pi";

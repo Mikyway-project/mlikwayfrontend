@@ -3,7 +3,7 @@ import { SelectBox } from "@/Components/Common/ui/Select/SelectBox";
 import { TextAreaBox } from "@/Components/Common/ui/TextArea/TextAreaBox";
 import { RoomType } from "@/types/Room/RoomType";
 import { useState, useRef, useEffect } from "react";
-import plus from "@/Components/Common/assets/plus.png";
+import plus from "@/Components/Common/assets/plus.webp";
 import { Fontname, ImgTag, LastButton, Wapper } from "@/SCSS/Fixed";
 import { useDispatch, useSelector } from "react-redux";
 

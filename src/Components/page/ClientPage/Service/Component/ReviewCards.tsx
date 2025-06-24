@@ -1,4 +1,4 @@
-import bathsrooms from "@/Components/Common/assets/bathsrooms.png";
+import bathsrooms from "@/Components/Common/assets/bathsrooms.webp";
 import { Notice } from "./type";
 import { useNavigate } from "react-router-dom";
 import { GateWayNumber } from "@/types/GateWay/GateWayType";

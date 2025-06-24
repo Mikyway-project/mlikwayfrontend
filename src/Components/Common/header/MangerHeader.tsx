@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import "@/SCSS/header.scss";
-import broom from "@/Components/Common/assets/broom.png";
+import broom from "@/Components/Common/assets/broom.webp";
 import { useLocation, useNavigate } from "react-router-dom";
 import {
   ClientGateWayType,

@@ -7,7 +7,7 @@ import { RoomType } from "@/types/Room/RoomType";
 import { useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
-import plus from "@/Components/Common/assets/plus.png";
+import plus from "@/Components/Common/assets/plus.webp";
 import { useDispatch, useSelector } from "react-redux";
 import { setNoticeData } from "@/config/request/ReduxList/NoticeReducer";
 import { setNoticeDetailData } from "@/config/request/ReduxList/NoticeDetailReducer";

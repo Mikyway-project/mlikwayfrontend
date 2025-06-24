@@ -1,13 +1,13 @@
 // ServiceProfiling.ts
-import bathsroom from "@/Components/Common/assets/bathroom.jpg";
-import cleaningroom from "@/Components/Common/assets/cleaningroom.jpg";
-import divcleaning from "@/Components/Common/assets/divcleaning.jpg";
-import bathsrooms from "@/Components/Common/assets/bathsrooms.png";
-import RoomClean from "@/Components/Common/assets/RoomClean.jpg";
+import bathsroom from "@/Components/Common/assets/bathroom.webp";
+import cleaningroom from "@/Components/Common/assets/cleaningroom.webp";
+import divcleaning from "@/Components/Common/assets/divcleaning.webp";
+import bathsrooms from "@/Components/Common/assets/bathsrooms.webp";
+import RoomClean from "@/Components/Common/assets/RoomClean.webp";
 import two_image from "@/Components/Common/assets/cleaning_blog_assets/two_image.webp";
 import there_image from "@/Components/Common/assets/cleaning_blog_assets/there_image.webp";
-import building from "@/Components/Common/assets/cleaning_blog_assets/building.png";
-import post_construction from "@/Components/Common/assets/cleaning_blog_assets/post-construction.png";
+import building from "@/Components/Common/assets/cleaning_blog_assets/building.webp";
+import post_construction from "@/Components/Common/assets/cleaning_blog_assets/post-construction.webp";
 
 export interface Service {
   Service: string;

@@ -1,6 +1,6 @@
 import { Helmet, HelmetData } from "react-helmet-async";
 import image from "../../../../public/favicon.png";
-import image2 from "@/Components/Common/assets/newhome/moving4.jpg";
+import image2 from "@/Components/Common/assets/newhome/moving4.webp";
 
 type HeadProps = {
   title?: string;
