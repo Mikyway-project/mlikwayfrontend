@@ -264,7 +264,7 @@ export const MainPage = () => {
             key={index}
             onClick={() => handleClickSerive(data.cleanType)}
           >
-            <img src={data.icon} alt="" />
+            <img src={data.icon} alt="" loading="lazy" />
             {data.cleanType}
           </CleanButton>
         ))}
