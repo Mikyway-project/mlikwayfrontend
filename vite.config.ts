@@ -5,7 +5,7 @@ import viteImagemin from "vite-plugin-imagemin";
 import compression from "vite-plugin-compression";
 import { fileURLToPath } from "url";
 
-export default defineConfig(({ mode }) => {
+export default defineConfig(() => {
   return {
     server: {
       port: 9000,
