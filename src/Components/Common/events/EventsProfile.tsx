@@ -48,6 +48,8 @@ export const EventsProfile = ({ eventname }: Eventprops) => {
               display: "flex",
               justifyContent: "center",
               gap: "20px",
+              fontWeight: "bolder",
+              color: "#7E57C2",
             }}
           >
             <MdCelebration size={24} color="#f39c12" />
