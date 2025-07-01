@@ -25,7 +25,6 @@ const Eventdescriptions = styled.div`
 
   @media screen and (max-width: 600px) {
     font-size: 0.7rem;
-    font-weight: 300;
   }
 `;
 
