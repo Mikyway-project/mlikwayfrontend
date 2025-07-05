@@ -2,7 +2,7 @@ import styled from "styled-components";
 // 예시: MangerHeader를 named import 방식으로 가져오기
 import { Fontname } from "@/SCSS/Fixed";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { GateWayNumber, ManagerGateWayType } from "@/types/GateWay/GateWayType";
 import { POST } from "@/config/request/axios/axiosInstance";
 import { paths } from "@/config/paths/paths";
@@ -188,6 +188,11 @@ export const ManagerMain = () => {
           />
           <MangerButton onClick={handleLogin}>로그인</MangerButton>
           <SiginButton />
+          <Link
+            to={GateWayNumber.Manager + "/" + ManagerGateWayType.ManagerFind}
+          >
+            회원 정보 찾기
+          </Link>
         </MangerPage>
       </Wrapper>
     </>

@@ -41,6 +41,7 @@ import ServiceDetail from "@/Components/page/ClientPage/Service/ServiceDetail";
 import { useEffect } from "react";
 import ReactGA from "react-ga4";
 import { HelmetProvider } from "react-helmet-async";
+import ManagerFind from "@/Components/page/ManagerPage/Connected/ManagerFind";
 
 const router = createBrowserRouter([
   {
@@ -95,6 +96,10 @@ const router = createBrowserRouter([
       {
         path: ManagerGateWayType.Inquires,
         element: <ManagerInquires />, // Assuming this is the correct component for Inquires
+      },
+      {
+        path: ManagerGateWayType.ManagerFind,
+        element: <ManagerFind />, // Assuming this is the correct component for Manager Find
       },
       {
         path: ManagerGateWayType.Inquireedit,

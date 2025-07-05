@@ -1,3 +1,4 @@
+
 export const ManagerGateWayType = {
   Address: "Sign",
   Advice: "Advice",
@@ -11,6 +12,7 @@ export const ManagerGateWayType = {
   Adviceedit: "editNotice/:noticeId",
   Inquires: "Inquires",
   Inquireedit: "editInquire/:InquireId",
+  ManagerFind: "ManagerFind",
 };
 export const ClientGateWayType = {
   home: "home",

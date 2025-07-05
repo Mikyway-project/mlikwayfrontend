@@ -58,63 +58,6 @@ export const MangerHeader: React.FC<MangerHeaderProps> = ({ children }) => {
   const listRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (activeButton === "Login" || activeButton === "Home") return; // activeButton이 "Login"일 때는 로그인 체크를 하지 않음
-    LoginCheck()
-      .then((res) => {
-        if (res.resultType === "success") {
-          Swal.fire({
-            icon: "success",
-            title: "로그인 성공",
-            text: res.message,
-            confirmButtonText: "확인",
-          });
-          dispatch(logout()); // 세션 상태를 false로 설정
-          dispatch(
-            setSession({
-              isAuthenticated: true,
-              userId: res.data.userid,
-            })
-          ); // 세션 상태를 true로 설정
-        } else {
-          Swal.fire({
-            toast: true,
-            position: "top",
-            icon: "error",
-            title: "로그인 후 이용해주세요.",
-            showConfirmButton: false,
-            timer: 3000,
-            timerProgressBar: true,
-            customClass: {
-              popup: "my-toast", // 커스텀 클래스 지정
-            },
-          });
-          setActiveButton("Login");
-          dispatch(logout()); // 세션 상태를 false로 설정
-          dispatch(Sessionout()); // 세션 상태를 false로 설정
-          navigate(GateWayNumber.Manager + "/" + ManagerGateWayType.Main); // 로그인 페이지로 이동
-        }
-      })
-      .catch((error) => {
-        Swal.fire({
-          toast: true,
-          position: "top",
-          icon: "error",
-          title: "Error during login: " + error,
-          showConfirmButton: false,
-          timer: 3000,
-          timerProgressBar: true,
-          customClass: {
-            popup: "my-toast", // 커스텀 클래스 지정
-          },
-        });
-        setActiveButton("Login");
-        dispatch(logout()); // 세션 상태를 false로 설정
-        dispatch(Sessionout()); // 세션 상태를 false로 설정
-        navigate(GateWayNumber.Manager + "/" + ManagerGateWayType.Main); // 로그인 페이지로 이동
-      }); // 로그인 체크
-  }, []);
-
-  useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (listRef.current && !listRef.current.contains(event.target as Node)) {
         setListVisible(false);
@@ -242,7 +185,11 @@ export const MangerHeader: React.FC<MangerHeaderProps> = ({ children }) => {
         });
     };
 
-    if (location.pathname !== "/Manager/Login") {
+    if (
+      location.pathname !== "/Manager/Login" &&
+      location.pathname !== "/Manager/SignUp" &&
+      location.pathname !== "/Manager/ManagerFind"
+    ) {
       LoginCheck();
     }
   }, [location.pathname]);
