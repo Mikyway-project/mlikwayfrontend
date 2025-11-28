@@ -71,7 +71,7 @@ export const BlogComment = () => {
           </LogDescription>
         </div>
       </LogItem>
-      <EventsProfile eventname="홈페이지에 방문한 고객에 한하여, 피톤치드 무료와 5% 할인 혜택을 제공해드리고 있습니다. (단, 홈페이지에서 예약을 하시거나, 방문 사실을 전화로 말씀해주셔야 합니다.)" />
+      <EventsProfile eventname="홈페이지에 방문한 고객에 한하여, 피톤치드 무료 혜택을 제공해드리고 있습니다." />
     </LogSection>
   );
 };
