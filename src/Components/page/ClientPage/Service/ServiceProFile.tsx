@@ -64,7 +64,7 @@ const ServiceProFile = () => {
           setNotice([]);
           return;
         }
-        console.log(res);
+        console.log(res.pageDTO);
         setNotice(res.pageDTO.list);
         TotalPage.current = res.pageDTO.pageCount;
       })
