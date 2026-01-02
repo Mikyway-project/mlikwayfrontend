@@ -45,12 +45,9 @@ const ServiceProFile = () => {
         params: { page: CurrentPage },
       });
     } else {
-      await GET({
+      return await GET({
         url: paths.Notice.Type.path,
         params: { type: type, page: CurrentPage },
-      }).then((res) => {
-        console.log(res);
-        return res;
       });
     }
   };
@@ -67,6 +64,7 @@ const ServiceProFile = () => {
           setNotice([]);
           return;
         }
+        console.log(res);
         setNotice(res.pageDTO.list);
         TotalPage.current = res.pageDTO.pageCount;
       })
