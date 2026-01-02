@@ -45,9 +45,12 @@ const ServiceProFile = () => {
         params: { page: CurrentPage },
       });
     } else {
-      return await GET({
+      await GET({
         url: paths.Notice.Type.path,
         params: { type: type, page: CurrentPage },
+      }).then((res) => {
+        console.log(res);
+        return res;
       });
     }
   };
