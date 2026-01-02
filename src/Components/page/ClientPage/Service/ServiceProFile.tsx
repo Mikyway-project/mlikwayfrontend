@@ -64,10 +64,10 @@ const ServiceProFile = () => {
           setNotice([]);
           return;
         }
-        console.log(res.pageDTO.list);
         if (res.resultType == "success") {
           setNotice(res.pageDTO.list);
         } else if (res.resultType == "partSuccess") {
+          console.log(res.pageDTO.list[0]);
           setNotice(res.pageDTO.list[0]);
         }
         TotalPage.current = res.pageDTO.pageCount;
