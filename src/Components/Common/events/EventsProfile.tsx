@@ -30,6 +30,7 @@ const Eventdescriptions = styled.div`
 
 const Eventdescriptions2 = styled.div`
   border: 1px dotted rgba(0, 0, 0, 0.2);
+  padding: 16px 20px;
   margin-top: 20px;
   border-radius: 12px;
   font-size: 1rem;
