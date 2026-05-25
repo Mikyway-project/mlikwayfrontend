@@ -30,7 +30,6 @@ const Eventdescriptions = styled.div`
 
 const Eventdescriptions2 = styled.div`
   border: 1px dotted rgba(0, 0, 0, 0.2);
-  padding: 16px 20px;
   margin-top: 20px;
   border-radius: 12px;
   font-size: 1rem;
@@ -52,7 +51,7 @@ const Emphasis1 = styled.span`
 `;
 
 const Emphasis2 = styled.span`
-  color: #1126e7;
+  color: #1120aa;
   font-weight: bold;
 `;
 
@@ -92,7 +91,7 @@ export const EventsProfile = ({ eventname }: Eventprops) => {
         <Eventdescriptions>{eventname}</Eventdescriptions>
         <Eventdescriptions2>
           어느덧 청소 서비스를 시작한지 10주년을 맞이하여 특별한{" "}
-          <Emphasis1>추가 혜택</Emphasis1>을 드립니다. 홈페이지에 들어와 전화
+          <Emphasis1>추가 혜택</Emphasis1>을 드립니다. \n홈페이지에 들어와 전화
           또는 홈페이지 내 예약 서비스를 통해 예약을 진행한 손님에 한하여,
           <Emphasis2>1만원</Emphasis2>을 할인해드립니다. 많관부!!
         </Eventdescriptions2>
