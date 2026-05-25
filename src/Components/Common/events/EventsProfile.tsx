@@ -66,7 +66,7 @@ export const EventsProfile = ({ eventname }: Eventprops) => {
           추가적으로 제공되는 혜택이 있어요! 어느덧 청소 서비스를 시작한지
           10주년을 맞이하여 특별한 혜택을 드립니다. 홈페이지에 들어와서 전화
           또는 홈페이지 내 예약 서비스를 통해 예약을 진행한 손님에 한하여,
-          1만원을 할인해드립니다.
+          1만원을 할인해드립니다. 많관부!!
         </Eventdescriptions>
       </EventContainer>
     </div>
