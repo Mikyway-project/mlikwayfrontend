@@ -17,7 +17,7 @@ const Eventdescriptions = styled.div`
   border-radius: 12px;
   font-size: 1rem;
   font-weight: 600;
-  color: #333;
+  color: #333433;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
   line-height: 1.4;
@@ -35,7 +35,25 @@ const Eventdescriptions2 = styled.div`
   border-radius: 12px;
   font-size: 1rem;
   font-weight: 600;
-  color: #4d102e;
+  color: #4d1040;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  line-height: 1.4;
+  text-align: left;
+
+  @media screen and (max-width: 600px) {
+    font-size: 0.7rem;
+  }
+`;
+
+const Eventdescriptions3 = styled.div`
+  border: 1px dotted rgba(0, 0, 0, 0.2);
+  padding: 16px 20px;
+  margin-top: 20px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #4d1040;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
   line-height: 1.4;
@@ -51,8 +69,8 @@ const Emphasis1 = styled.span`
   font-weight: bold;
 `;
 
-const Emphasis2 = styled.span`
-  color: #1120aa;
+const CostFont = styled.span`
+  color: #11204a;
   font-weight: bold;
 `;
 
@@ -86,10 +104,10 @@ export const EventsProfile = ({ eventname }: Eventprops) => {
             }}
           >
             <MdCelebration size={24} color="#f39c12" />
-            오픈 기념 이벤트!!!
+            오픈 기념 이벤트!!
             <MdCelebration
               size={24}
-              color="#f39c12"
+              color="#12c6f3"
               style={{ transform: "scaleX(-1)" }}
             />
           </div>
@@ -99,10 +117,11 @@ export const EventsProfile = ({ eventname }: Eventprops) => {
           어느덧 하반기면 홈페이지를 만든지 1주년이 다 되어 가네요. <br />{" "}
           특별한 <Emphasis1>추가 혜택</Emphasis1>을 해드리기로 했어요. <br />
           이번에 홈페이지에 들어와 전화 또는 홈페이지 내 예약 서비스를 통해
-          예약을 진행한 손님에 한하여,
-          <Emphasis2>1만원</Emphasis2>을 <PlusFont>할인 </PlusFont> 해드립니다.{" "}
-          <br /> 신청이 많았으면 좋겠는데.....
+          예약을 진행한 고객님들에 한하여,
+          <CostFont>1만원</CostFont>을 <PlusFont>할인 </PlusFont> 해드립니다.{" "}
+          <br /> 신청이 많았으면
         </Eventdescriptions2>
+        <Eventdescriptions3>좋겠는데.....</Eventdescriptions3>
       </EventContainer>
     </div>
   );
