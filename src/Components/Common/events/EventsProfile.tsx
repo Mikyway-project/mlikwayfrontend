@@ -7,7 +7,7 @@ const EventContainer = styled.div`
   width: 100%;
   max-width: 700px;
   padding: 30px;
-  border-radius: 20px;
+  border-radius: 30px;
 `;
 
 const Eventdescriptions = styled.div`
@@ -56,7 +56,7 @@ const Emphasis2 = styled.span`
   font-weight: bold;
 `;
 
-const Emphasis3 = styled.span`
+const PlusFont = styled.span`
   color: #2c19d8;
   font-weight: bold;
 `;
@@ -86,7 +86,7 @@ export const EventsProfile = ({ eventname }: Eventprops) => {
             }}
           >
             <MdCelebration size={24} color="#f39c12" />
-            오픈 기념 이벤트
+            오픈 기념 이벤트!!!
             <MdCelebration
               size={24}
               color="#f39c12"
@@ -96,12 +96,12 @@ export const EventsProfile = ({ eventname }: Eventprops) => {
         </Fontname3>
         <Eventdescriptions>{eventname}</Eventdescriptions>
         <Eventdescriptions2>
-          어느덧 하반기면 홈페이지를 만든지 1주년이 다 되어 가네요. 특별한
-          <Emphasis1>추가 혜택</Emphasis1>을 해드리기로 했어요. <br />
+          어느덧 하반기면 홈페이지를 만든지 1주년이 다 되어 가네요. <br />{" "}
+          특별한 <Emphasis1>추가 혜택</Emphasis1>을 해드리기로 했어요. <br />
           이번에 홈페이지에 들어와 전화 또는 홈페이지 내 예약 서비스를 통해
           예약을 진행한 손님에 한하여,
-          <Emphasis2>1만원</Emphasis2>을 <Emphasis3>할인 </Emphasis3>{" "}
-          해드립니다. 신청이 많았으면 좋겠는데.....
+          <Emphasis2>1만원</Emphasis2>을 <PlusFont>할인 </PlusFont> 해드립니다.{" "}
+          <br /> 신청이 많았으면 좋겠는데.....
         </Eventdescriptions2>
       </EventContainer>
     </div>
