@@ -53,7 +53,6 @@ const Emphasis1 = styled.span`
 
 const CostFont = styled.span`
   color: #11204a;
-  font-weight: bold;
 `;
 
 const PlusFont = styled.span`
@@ -96,11 +95,11 @@ export const EventsProfile = ({ eventname }: Eventprops) => {
         </Fontname3>
         <Eventdescriptions>{eventname}</Eventdescriptions>
         <Eventdescriptions2>
-          어느덧 하반기면 홈페이지를 만든지 1주년이 다 되어 가네요. <br />{" "}
+          어느덧 하반기면 홈페이지를 만든지 2주년이 다 되어 가네요. <br />{" "}
           특별한 <Emphasis1>추가 혜택</Emphasis1>을 해드리기로 했어요. <br />
-          이번에 홈페이지에 들어와 전화 또는 홈페이지 내 예약 서비스를 통해
-          예약을 진행한 고객님들에 한하여,
-          <CostFont>1만원</CostFont>을 <PlusFont>할인 </PlusFont> 해드립니다.{" "}
+          이번에 전화를 주신 고객님께서 예약을 하신 후 홈페이지를 사진 찍어
+          문자를 보내주신다면
+          <CostFont>5%</CostFont>을 <PlusFont>할인 </PlusFont> 해드립니다.{" "}
           <br /> 신청이 많았으면 좋겠는데.....
         </Eventdescriptions2>
       </EventContainer>
