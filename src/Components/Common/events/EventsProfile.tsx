@@ -53,6 +53,7 @@ const Emphasis1 = styled.span`
 
 const CostFont = styled.span`
   color: #11204a;
+  font-weight: bold;
 `;
 
 const PlusFont = styled.span`
